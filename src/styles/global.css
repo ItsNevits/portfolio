@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* Theme */
+@theme {
+  --color-primary: #0d0d0d;
+  --color-secondary: #f95e04;
+  --color-accent: #a34c1f;
+  --color-accent-dark: #141414;
+  --color-white: #fef9f7;
+
+  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+}
+
+/* Fonts */
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-VariableFont.woff2") format("woff2");
@@ -16,6 +28,59 @@
   font-style: italic;
 }
 
+/* Animations */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: var(--color-primary);
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar but keep functionality - All browsers */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+html,
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* Color secondary pero con filtro para los svg */
+.filter-svg-secondary {
+  filter: invert(39%) sepia(78%) saturate(447%) hue-rotate(11deg)
+    brightness(95%) contrast(92%);
+}
+
+.rounded-bl-5xl {
+  border-bottom-left-radius: 3rem;
+}
+
+.rounded-br-5xl {
+  border-bottom-right-radius: 3rem;
+}
+
+.rounded-bl-6xl {
+  border-bottom-left-radius: 4rem;
+}
+
+.rounded-br-6xl {
+  border-bottom-right-radius: 4rem;
 }

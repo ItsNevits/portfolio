@@ -1,0 +1,53 @@
+---
+import ArrowRightIcon from "@/assets/icons/arrow-right.svg";
+import { Image } from "astro:assets";
+---
+
+<section class="relative py-16 md:py-20 lg:py-24 bg-primary">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+      <!-- Left Side - Main Content -->
+      <div class="flex-1 space-y-6">
+        <span
+          class="text-secondary text-xs md:text-sm font-semibold uppercase tracking-wider"
+        >
+          Behind the Code
+        </span>
+
+        <h2
+          class="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+        >
+          Shaping Experiences <br /> That Make Life Simpler
+        </h2>
+      </div>
+
+      <!-- Right Side - Description & CTA -->
+      <div class="flex-1 space-y-6">
+        <p class="text-white text-lg md:text-xl leading-relaxed">
+          I'm a full-stack developer focused on building clean, scalable
+          applications that solve real-world problems.
+        </p>
+
+        <div class="flex flex-col space-y-3">
+          <p class="text-white/70 text-sm">Let's Build Something</p>
+          <p class="text-white/70 text-sm">Meaningful Together</p>
+        </div>
+
+        <a
+          href="/projects"
+          class="bg-white rounded-full pl-5 pr-3 py-2 flex items-center justify-center group transition-all duration-300 ease-out w-fit"
+        >
+          <span class="font-semibold">View My Work</span>
+          <Image
+            src={ArrowRightIcon}
+            alt="Arrow Right"
+            class="inline-block ml-2 bg-secondary rounded-full p-1 group-hover:translate-x-1 group-hover:rotate-[-15deg] transition-transform duration-300 ease-out"
+            format="webp"
+            height={30}
+            width={30}
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

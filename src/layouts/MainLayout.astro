@@ -1,4 +1,6 @@
 ---
+import Header from "@/components/shared/Header.astro";
+import ScrollProgressBar from "@/components/shared/ScrollProgressBar.astro";
 import "@/styles/global.css";
 ---
 
@@ -8,9 +10,11 @@ import "@/styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>nevits.dev</title>
   </head>
-  <body>
+  <body class="select-none">
+    <ScrollProgressBar />
+    <Header />
     <main>
       <slot />
     </main>

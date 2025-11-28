@@ -1,0 +1,40 @@
+---
+// Scroll Progress Bar - Visual scroll indicator
+---
+
+<div
+  id="scroll-progress-container"
+  class="fixed top-0 left-0 w-full h-1 bg-transparent z-100 pointer-events-none"
+>
+  <div
+    id="scroll-progress-bar"
+    class="h-full bg-accent-dark transition-all duration-150 ease-out shadow-lg shadow-secondary/50"
+    style="width: 0%"
+  >
+  </div>
+</div>
+
+<script>
+  // Update scroll progress bar on scroll
+  function updateScrollProgress() {
+    const scrollProgressBar = document.getElementById("scroll-progress-bar");
+    if (!scrollProgressBar) return;
+
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.scrollY;
+
+    // Calculate scroll percentage
+    const scrollableHeight = documentHeight - windowHeight;
+    const scrollPercentage = (scrollTop / scrollableHeight) * 100;
+
+    // Update the width of the progress bar
+    scrollProgressBar.style.width = `${Math.min(scrollPercentage, 100)}%`;
+  }
+
+  // Add scroll event listener
+  window.addEventListener("scroll", updateScrollProgress, { passive: true });
+
+  // Initial update
+  updateScrollProgress();
+</script>
