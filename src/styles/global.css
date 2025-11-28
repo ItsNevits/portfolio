@@ -63,11 +63,6 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-/* Color secondary pero con filtro para los svg */
-.filter-svg-secondary {
-  filter: invert(39%) sepia(78%) saturate(447%) hue-rotate(11deg)
-    brightness(95%) contrast(92%);
-}
 
 .rounded-bl-5xl {
   border-bottom-left-radius: 3rem;
